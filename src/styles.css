@@ -1,13 +1,13 @@
 :root {
-  --bg: #120f24;
-  --panel: #1b1736;
-  --panel-2: #262048;
-  --line: #3b3466;
-  --text: #f4f1ff;
-  --muted: #a49ecb;
-  --accent: #e8303f;      /* merah apel */
-  --accent-2: #f4d982;    /* emas halo */
-  --danger: #ff6b7a;
+  --bg: #0a0a10;
+  --panel: #14141d;
+  --panel-2: #1e1e2a;
+  --line: #30303f;
+  --text: #f5efe6;
+  --muted: #a29fae;
+  --accent: #e01212;      /* merah iblis */
+  --accent-2: #f1e7d6;    /* putih tulang */
+  --danger: #ff5a5a;
   --ok: #5fe0a4;
   --radius: 16px;
   --display: 'Grenze Gotisch', 'Palatino Linotype', Georgia, serif;
@@ -18,7 +18,7 @@
 html, body { margin: 0; }
 
 body {
-  background: radial-gradient(900px 500px at 85% -5%, #2a2160 0%, transparent 65%), var(--bg);
+  background: radial-gradient(900px 500px at 85% -5%, #2b0709 0%, transparent 65%), var(--bg);
   color: var(--text);
   font-family: 'Alegreya Sans', system-ui, sans-serif;
   font-size: 17px;
@@ -63,7 +63,7 @@ body {
 
 .badge {
   position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
-  background: rgba(18, 15, 36, .85); backdrop-filter: blur(6px);
+  background: rgba(10, 10, 16, .88); backdrop-filter: blur(6px);
   border: 1px solid var(--accent-2); color: var(--accent-2); font-size: 12px; font-weight: 600;
 }
 
@@ -77,7 +77,7 @@ body {
 .card-body .desc {                  /* di kartu dibatasi agar tinggi kartu rapi */
   display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
 }
-.sheet-head .desc { margin-top: 8px; color: #c4bfe3; }
+.sheet-head .desc { margin-top: 8px; color: #cfcbd6; }
 .desc-input { resize: vertical; min-height: 110px; line-height: 1.5; }
 .card-foot { margin-top: auto; padding-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .count { color: var(--muted); font-size: 13px; }
@@ -91,7 +91,7 @@ body {
 .btn:hover { border-color: var(--accent); }
 .btn:disabled { opacity: .6; cursor: not-allowed; }
 .btn-primary { background: var(--accent); border-color: transparent; color: #fff; }
-.btn-primary:hover { background: #f2485a; border-color: transparent; }
+.btn-primary:hover { background: #ff2a2a; border-color: transparent; }
 .btn-danger { color: var(--danger); }
 
 label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
@@ -110,14 +110,14 @@ input[type='file'] { padding: 8px; }
 .center { text-align: center; padding: 30px 0; }
 
 .notice {
-  background: #2a2150; border: 1px solid var(--accent-2); color: #f0eaff;
+  background: #2a0d0f; border: 1px solid var(--accent-2); color: #f5efe6;
   padding: 12px 14px; border-radius: 10px; margin-bottom: 16px; font-size: 14px;
 }
 code { background: rgba(255,255,255,.08); padding: 1px 6px; border-radius: 5px; }
 
 /* Modal */
 .overlay {
-  position: fixed; inset: 0; background: rgba(8, 6, 20, .8); display: grid; place-items: center; padding: 16px; z-index: 50;
+  position: fixed; inset: 0; background: rgba(4, 4, 8, .84); display: grid; place-items: center; padding: 16px; z-index: 50;
 }
 .modal {
   width: 100%; max-width: 380px; background: var(--panel); border: 1px solid var(--line);
@@ -181,16 +181,16 @@ code { background: rgba(255,255,255,.08); padding: 1px 6px; border-radius: 5px; 
 /* Header: pencarian + tombol request */
 .top-actions { display: flex; align-items: center; gap: 10px; flex: 1 1 320px; justify-content: flex-end; flex-wrap: wrap; }
 .top-actions .search { flex: 1 1 200px; }
-.btn-request { border-color: #ffc933; color: #ffe27a; white-space: nowrap; }
-.btn-request:hover { background: rgba(255, 201, 51, .1); border-color: #ffc933; }
+.btn-request { border-color: #cfc4b2; color: var(--accent-2); white-space: nowrap; }
+.btn-request:hover { background: rgba(241, 231, 214, .08); border-color: var(--accent-2); }
 
 /* Upcoming */
 .upcoming { margin-top: 34px; }
-.section-title { margin: 0 0 14px; font-family: var(--display); font-size: 24px; color: #ffe27a; }
+.section-title { margin: 0 0 14px; font-family: var(--display); font-size: 24px; color: var(--accent-2); }
 .card-upcoming:hover { transform: none; border-color: var(--line); }
 .card-upcoming .card-thumb img { filter: saturate(.55) brightness(.8); }
-.badge-soon { border-color: #ffc933; color: #ffe27a; }
-.chip-soon { border-color: #ffc933; color: #ffe27a; }
+.badge-soon { border-color: #cfc4b2; color: var(--accent-2); }
+.chip-soon { border-color: #cfc4b2; color: var(--accent-2); }
 
 /* Modal request */
 .modal-wide { max-width: 480px; }
@@ -219,7 +219,7 @@ code { background: rgba(255,255,255,.08); padding: 1px 6px; border-radius: 5px; 
   background: var(--panel-2); border: 1px solid var(--line);
 }
 .req-new { border-left: 3px solid var(--danger); }
-.req-processing { border-left: 3px solid #ffc933; }
+.req-processing { border-left: 3px solid #cfc4b2; }
 .req-done { border-left: 3px solid var(--ok); opacity: .75; }
 .req-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .req-text { margin: 0; white-space: pre-wrap; word-break: break-word; }
@@ -255,7 +255,7 @@ select:focus { outline: 2px solid var(--accent-2); outline-offset: 1px; }
 .yt-play svg { margin-left: 3px; }
 .yt-label {
   position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
-  background: rgba(18, 15, 36, .85); color: #fff; font-size: 12px; font-weight: 600;
+  background: rgba(10, 10, 16, .88); color: #fff; font-size: 12px; font-weight: 600;
 }
 .badge-video {
   position: absolute; right: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
@@ -271,11 +271,11 @@ select:focus { outline: 2px solid var(--accent-2); outline-offset: 1px; }
   border: 1px solid var(--line); color: var(--muted);
 }
 .tag-free { color: var(--ok); border-color: rgba(61, 220, 151, .45); }
-.tag-paid { color: #ffe27a; border-color: rgba(255, 201, 51, .5); }
+.tag-paid { color: var(--accent-2); border-color: rgba(241, 231, 214, .45); }
 .btn-buy {
-  background: linear-gradient(135deg, #ffc933, #ff9f43); border-color: transparent; color: #1a1300;
+  background: var(--accent-2); border-color: transparent; color: #14141d;
 }
-.btn-buy:hover { border-color: #fff3c4; }
+.btn-buy:hover { border-color: #fff; }
 .variant .btn { flex-shrink: 0; min-width: 92px; text-align: center; }
 
 /* Media sosial */
@@ -308,13 +308,17 @@ h1, h2, h3, h4 { font-weight: 700; }
 .hero {
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
   align-items: center; gap: 12px; min-height: 290px; margin: 6px 0 36px;
-  padding: 28px 36px; border: 1px solid #5a2440; border-radius: 24px;
+  padding: 28px 36px; border: 1px solid #5a1218; border-radius: 24px;
   background:
-    radial-gradient(520px 300px at 78% 55%, rgba(232, 48, 63, .28), transparent 70%),
-    radial-gradient(420px 260px at 8% 0%, rgba(124, 70, 255, .22), transparent 70%),
-    linear-gradient(120deg, #1b1233 20%, #2a1840 100%);
+    radial-gradient(560px 320px at 78% 55%, rgba(224, 18, 18, .42), transparent 70%),
+    radial-gradient(420px 260px at 6% 0%, rgba(255, 255, 255, .05), transparent 70%),
+    linear-gradient(120deg, #0c0c12 25%, #2a060a 100%);
 }
 .hero-bg { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+.hero-bg::before {           /* retakan */
+  content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 70%;
+  background: url(/art/cracks.svg) no-repeat right center / cover; opacity: .9;
+}
 .hero-bg::after {            /* bara api */
   content: ''; position: absolute; inset: 0; opacity: .8;
   background:
@@ -334,17 +338,17 @@ h1, h2, h3, h4 { font-weight: 700; }
 .hero-copy h1 { margin: 0; font-family: 'Pirata One', var(--display); font-weight: 400; line-height: 1; }
 .hero-small {
   display: block; margin-bottom: 2px; font-size: clamp(24px, 3.2vw, 36px); letter-spacing: 4px;
-  color: var(--accent-2); text-shadow: 0 0 16px rgba(244, 217, 130, .4);
+  color: var(--accent-2); text-shadow: 0 0 16px rgba(241, 231, 214, .4);
 }
 .hero-big {
   display: block; font-size: clamp(58px, 9.5vw, 118px); letter-spacing: 3px; padding-bottom: 6px;
-  background: linear-gradient(180deg, #ffffff 8%, #ffd5d9 40%, #e8303f 95%);
+  background: linear-gradient(180deg, #ffffff 8%, #f1e7d6 40%, #e01212 95%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 0 20px rgba(232, 48, 63, .6)) drop-shadow(0 4px 0 #4a0c1a);
+  filter: drop-shadow(0 0 20px rgba(224, 18, 18, .6)) drop-shadow(0 4px 0 #3a0508);
 }
 .hero-copy::after {          /* garis hias: tanduk kecil di tengah */
   content: ''; display: block; width: 260px; height: 16px; margin-top: 10px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 16' fill='none'%3E%3Cpath d='M0 8H108M152 8H260' stroke='%23e8303f' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M130 1L137 8L130 15L123 8Z' fill='%23f4d982'/%3E%3Cpath d='M112 12Q116 3 121 6M148 12Q144 3 139 6' stroke='%23f4d982' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left center / contain;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 16' fill='none'%3E%3Cpath d='M0 8H108M152 8H260' stroke='%23e01212' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M130 1L137 8L130 15L123 8Z' fill='%23f1e7d6'/%3E%3Cpath d='M112 12Q116 3 121 6M148 12Q144 3 139 6' stroke='%23f1e7d6' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left center / contain;
 }
 .hero-art { position: relative; height: 100%; min-height: 230px; }
 .art { position: absolute; height: auto; user-select: none; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .55)); }
@@ -393,14 +397,14 @@ h1, h2, h3, h4 { font-weight: 700; }
 .card-body > * { position: relative; }
 .card-body::before {
   content: ''; position: absolute; right: -32px; top: -30px; width: 130px; height: 130px;
-  background: url(/art/clover.svg) no-repeat center / contain; opacity: .17;
+  background: url(/art/clover.svg) no-repeat center / contain; opacity: .1;
   transition: transform .7s ease, opacity .3s ease; pointer-events: none;
 }
-.card:hover .card-body::before { transform: rotate(36deg); opacity: .28; }
+.card:hover .card-body::before { transform: rotate(36deg); opacity: .2; }
 .card-thumb { border-bottom: 0; }
 .card-thumb::after {         /* garis merah tipis di bawah gambar */
   content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent), rgba(232, 48, 63, 0) 80%);
+  background: linear-gradient(90deg, var(--accent), rgba(224, 18, 18, 0) 80%);
 }
 
 /* ---- Tampilan HP ---- */
