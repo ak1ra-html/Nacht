@@ -10,7 +10,7 @@
   --danger: #ff6b7a;
   --ok: #5fe0a4;
   --radius: 16px;
-  --display: 'Bagel Fat One', 'Trebuchet MS', sans-serif;
+  --display: 'Grenze Gotisch', 'Palatino Linotype', Georgia, serif;
 }
 
 * { box-sizing: border-box; }
@@ -20,7 +20,8 @@ html, body { margin: 0; }
 body {
   background: radial-gradient(900px 500px at 85% -5%, #2a2160 0%, transparent 65%), var(--bg);
   color: var(--text);
-  font-family: 'Figtree', system-ui, sans-serif;
+  font-family: 'Alegreya Sans', system-ui, sans-serif;
+  font-size: 17px;
   min-height: 100vh;
 }
 
@@ -38,8 +39,7 @@ body {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   font-family: var(--display); font-weight: 700; font-size: 22px; color: #fff;
 }
-.logo-text { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: .3px; }
-.logo-text b { color: var(--accent); }
+.logo-text { font-family: var(--display); font-weight: 800; font-size: 32px; letter-spacing: .5px; }
 
 .search {
   flex: 1 1 260px; max-width: 420px; padding: 11px 14px; border-radius: 10px;
@@ -294,24 +294,49 @@ select:focus { outline: 2px solid var(--accent-2); outline-offset: 1px; }
 .foot p:last-child { margin-top: 20px; }
 
 /* ---- Tema Nacht ---- */
-h1, h2, h3, h4, .logo-text, .variant-text strong { font-weight: 400; }
-.card-body h3 { font-size: 19px; }
-.sheet-head h2 { font-size: 24px; }
-.variant-text strong { font-size: 17px; }
+h1, h2, h3, h4 { font-weight: 700; }
+.card-body h3 { font-size: 23px; font-weight: 700; }
+.desc, .card-body .desc { font-size: 15.5px; }
+.chip, .count, .badge, .badge-video, .tag { font-size: 13.5px; }
+.btn { font-size: 16px; }
+.sheet-head h2 { font-size: 30px; }
+.variant-text strong { font-size: 21px; font-weight: 700; }
 .card:hover { border-color: var(--accent); }
 .card-thumb { border-bottom: 1px solid var(--line); }
 
 /* Hero */
 .hero {
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
-  align-items: center; gap: 12px; min-height: 270px; margin: 6px 0 34px;
-  padding: 28px 32px; border: 1px solid var(--line); border-radius: 24px;
-  background: linear-gradient(120deg, var(--panel) 30%, #2a2160 100%);
+  align-items: center; gap: 12px; min-height: 290px; margin: 6px 0 36px;
+  padding: 28px 36px; border: 1px solid #5a2440; border-radius: 24px;
+  background:
+    radial-gradient(520px 300px at 78% 55%, rgba(232, 48, 63, .28), transparent 70%),
+    radial-gradient(420px 260px at 8% 0%, rgba(124, 70, 255, .22), transparent 70%),
+    linear-gradient(120deg, #1b1233 20%, #2a1840 100%);
 }
-.hero-copy h1 { margin: 0 0 12px; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.08; }
-.hero-copy p { margin: 0; max-width: 40ch; color: #c4bfe3; line-height: 1.55; font-size: 16px; }
+.hero-bg { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+.hero-bg::after {            /* bara api */
+  content: ''; position: absolute; inset: 0; opacity: .8;
+  background:
+    radial-gradient(circle at 12% 78%, var(--accent-2) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 24% 32%, var(--accent) 0 2px, transparent 3px),
+    radial-gradient(circle at 41% 86%, var(--accent) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 47% 22%, var(--accent-2) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 58% 66%, var(--accent) 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 12%, var(--accent) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 93% 82%, var(--accent-2) 0 2px, transparent 3px),
+    radial-gradient(circle at 35% 55%, var(--accent-2) 0 1px, transparent 2px);
+}
+.hero-circle { position: absolute; top: 50%; right: 22px; width: 440px; height: 440px; margin-top: -220px; opacity: .6; }
+.hero-circle img { width: 100%; height: 100%; display: block; animation: spin 120s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero-copy { position: relative; }
+.hero-copy h1 {
+  margin: 0; font-size: clamp(40px, 6.2vw, 72px); line-height: 1; font-weight: 800;
+  text-shadow: 0 0 28px rgba(232, 48, 63, .55), 0 3px 0 rgba(0, 0, 0, .35);
+}
 .hero-art { position: relative; height: 100%; min-height: 230px; }
-.art { position: absolute; height: auto; user-select: none; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .45)); }
+.art { position: absolute; height: auto; user-select: none; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .55)); }
 .art-angry { width: 44%; right: 0; top: -34px; transform: rotate(5deg); z-index: 1; }
 .art-sitting { width: 36%; left: 12%; bottom: -34px; transform: rotate(-6deg); z-index: 2; }
 .art-halo { width: 22%; left: 20%; bottom: 128px; transform: rotate(-8deg); z-index: 3; }
@@ -320,7 +345,7 @@ h1, h2, h3, h4, .logo-text, .variant-text strong { font-weight: 400; }
 /* Kosong / judul upcoming / footer */
 .empty { display: grid; justify-items: center; gap: 6px; padding: 24px 0; }
 .empty img { width: 150px; height: auto; transform: rotate(-4deg); }
-.section-title { display: flex; align-items: center; gap: 10px; font-weight: 400; }
+.section-title { display: flex; align-items: center; gap: 10px; font-size: 30px; font-weight: 700; }
 .section-title img { width: 40px; height: auto; transform: rotate(-6deg); }
 
 .foot {
@@ -336,7 +361,8 @@ h1, h2, h3, h4, .logo-text, .variant-text strong { font-weight: 400; }
 .social-discord:hover { color: #8c96ff; }
 
 @media (max-width: 720px) {
-  .hero { grid-template-columns: 1fr; padding: 22px 20px 0; min-height: 0; overflow: hidden; }
+  .hero { grid-template-columns: 1fr; padding: 24px 20px 0; min-height: 0; overflow: hidden; }
+  .hero-circle { right: 50%; margin-right: -170px; top: auto; bottom: -150px; margin-top: 0; width: 340px; height: 340px; }
   .hero-art { min-height: 190px; }
   .art-angry { width: 40%; top: 0; }
   .art-sitting { width: 32%; bottom: -26px; }
@@ -348,4 +374,5 @@ h1, h2, h3, h4, .logo-text, .variant-text strong { font-weight: 400; }
 }
 @media (prefers-reduced-motion: reduce) {
   .card { transition: none; }
+  .hero-circle img { animation: none; }
 }

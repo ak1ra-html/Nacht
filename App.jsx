@@ -105,9 +105,9 @@ export default function App() {
   return (
     <div className="app">
       <header className="top">
-        <div className="logo" onClick={onLogoTap} role="img" aria-label="NachtVML">
+        <div className="logo" onClick={onLogoTap} role="img" aria-label="Nacht">
           <img className="logo-img" src="/logo.png" alt="" draggable="false" />
-          <span className="logo-text">Nacht<b>VML</b></span>
+          <span className="logo-text">Nacht</span>
         </div>
         <input
           className="search"
@@ -148,7 +148,7 @@ export default function App() {
       </main>
 
       <footer className="foot">
-        <p>NachtVML. Gunakan dengan risiko sendiri.</p>
+        <p>Nacht. Gunakan dengan risiko sendiri.</p>
       </footer>
 
       {openScript && (

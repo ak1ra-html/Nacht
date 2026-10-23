@@ -98,9 +98,9 @@ export default function App() {
   return (
     <div className="app">
       <header className="top">
-        <div className="logo" onClick={onLogoTap} role="img" aria-label="NachtVML">
+        <div className="logo" onClick={onLogoTap} role="img" aria-label="Nacht">
           <img className="logo-img" src="/logo.png" alt="" draggable="false" />
-          <span className="logo-text">Nacht<b>VML</b></span>
+          <span className="logo-text">Nacht</span>
         </div>
         <div className="top-actions">
           <input
@@ -119,9 +119,13 @@ export default function App() {
       </header>
 
       <section className="hero">
+        <div className="hero-bg" aria-hidden="true">
+          <div className="hero-circle">
+            <img src="/art/circle.svg" alt="" draggable="false" />
+          </div>
+        </div>
         <div className="hero-copy">
-          <h1>Script skin ML, siap download.</h1>
-          <p>Setiap script punya preview dan pilihan replace. Yang gratis dan yang berbayar ditandai jelas.</p>
+          <h1>Welcome to the Nacht web</h1>
         </div>
         <div className="hero-art" aria-hidden="true">
           <img className="art art-angry" src="/art/angry.webp" alt="" draggable="false" />
@@ -182,9 +186,9 @@ export default function App() {
       <footer className="foot">
         <img className="foot-swirl" src="/art/swirl.webp" alt="" draggable="false" />
         <div className="foot-main">
-          <p className="foot-title">Ikuti NachtVML untuk update script terbaru</p>
+          <p className="foot-title">Ikuti Nacht untuk update script terbaru</p>
           <SocialLinks variant="full" />
-          <p className="foot-credit">NachtVML. Ilustrasi oleh @ogipiyo.</p>
+          <p className="foot-credit">Nacht. Created by Akira</p>
         </div>
         <img className="foot-apple" src="/art/apple.webp" alt="" draggable="false" />
       </footer>
