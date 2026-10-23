@@ -125,7 +125,10 @@ export default function App() {
           </div>
         </div>
         <div className="hero-copy">
-          <h1>Welcome to the Nacht web</h1>
+          <h1>
+            <span className="hero-small">Welcome to the</span>
+            <span className="hero-big">Nacht web</span>
+          </h1>
         </div>
         <div className="hero-art" aria-hidden="true">
           <img className="art art-angry" src="/art/angry.webp" alt="" draggable="false" />

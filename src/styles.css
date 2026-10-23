@@ -331,9 +331,20 @@ h1, h2, h3, h4 { font-weight: 700; }
 .hero-circle img { width: 100%; height: 100%; display: block; animation: spin 120s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .hero-copy { position: relative; }
-.hero-copy h1 {
-  margin: 0; font-size: clamp(40px, 6.2vw, 72px); line-height: 1; font-weight: 800;
-  text-shadow: 0 0 28px rgba(232, 48, 63, .55), 0 3px 0 rgba(0, 0, 0, .35);
+.hero-copy h1 { margin: 0; font-family: 'Pirata One', var(--display); font-weight: 400; line-height: 1; }
+.hero-small {
+  display: block; margin-bottom: 2px; font-size: clamp(24px, 3.2vw, 36px); letter-spacing: 4px;
+  color: var(--accent-2); text-shadow: 0 0 16px rgba(244, 217, 130, .4);
+}
+.hero-big {
+  display: block; font-size: clamp(58px, 9.5vw, 118px); letter-spacing: 3px; padding-bottom: 6px;
+  background: linear-gradient(180deg, #ffffff 8%, #ffd5d9 40%, #e8303f 95%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 20px rgba(232, 48, 63, .6)) drop-shadow(0 4px 0 #4a0c1a);
+}
+.hero-copy::after {          /* garis hias: tanduk kecil di tengah */
+  content: ''; display: block; width: 260px; height: 16px; margin-top: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 16' fill='none'%3E%3Cpath d='M0 8H108M152 8H260' stroke='%23e8303f' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M130 1L137 8L130 15L123 8Z' fill='%23f4d982'/%3E%3Cpath d='M112 12Q116 3 121 6M148 12Q144 3 139 6' stroke='%23f4d982' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left center / contain;
 }
 .hero-art { position: relative; height: 100%; min-height: 230px; }
 .art { position: absolute; height: auto; user-select: none; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .55)); }
