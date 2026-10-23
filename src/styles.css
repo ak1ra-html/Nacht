@@ -387,3 +387,45 @@ h1, h2, h3, h4 { font-weight: 700; }
   .card { transition: none; }
   .hero-circle img { animation: none; }
 }
+
+/* ---- Kartu: semanggi daun 5 ---- */
+.card-body { position: relative; overflow: hidden; }
+.card-body > * { position: relative; }
+.card-body::before {
+  content: ''; position: absolute; right: -32px; top: -30px; width: 130px; height: 130px;
+  background: url(/art/clover.svg) no-repeat center / contain; opacity: .17;
+  transition: transform .7s ease, opacity .3s ease; pointer-events: none;
+}
+.card:hover .card-body::before { transform: rotate(36deg); opacity: .28; }
+.card-thumb { border-bottom: 0; }
+.card-thumb::after {         /* garis merah tipis di bawah gambar */
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(232, 48, 63, 0) 80%);
+}
+
+/* ---- Tampilan HP ---- */
+@media (max-width: 720px) {
+  .hero { padding: 24px 18px 18px; overflow: visible; }
+  .hero-copy h1 { margin-bottom: 4px; }
+  .hero-copy::after { width: 200px; }
+  .hero-art { min-height: 230px; }
+  .art-angry { width: 42%; right: 2%; top: 0; }
+  .art-flying { width: 38%; left: 0; right: auto; top: 6px; }
+  .art-sitting { width: 33%; left: 8%; bottom: -10px; }
+  .art-halo { width: 21%; left: 12%; bottom: 112px; }
+}
+@media (max-width: 560px) {
+  .app { padding: 0 12px 32px; }
+  .top { padding: 14px 0; gap: 10px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card-thumb { aspect-ratio: 4 / 3; }
+  .badge, .badge-video { left: 6px; bottom: 8px; padding: 2px 8px; font-size: 12px; }
+  .badge-video { left: auto; right: 6px; bottom: auto; top: 8px; }
+  .card-body { padding: 10px; gap: 6px; }
+  .card-body h3 { font-size: 19px; }
+  .card-body .desc { font-size: 14px; line-height: 1.35; -webkit-line-clamp: 3; }
+  .card-body::before { width: 90px; height: 90px; right: -24px; top: -22px; }
+  .chip { font-size: 12.5px; padding: 1px 8px; }
+  .card-foot .btn-primary { padding: 8px 10px; font-size: 15px; }
+  .section-title { font-size: 26px; }
+}
